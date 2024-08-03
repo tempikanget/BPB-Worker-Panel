@@ -1622,7 +1622,7 @@ const updateDataset = async (env, Settings) => {
 
     const proxySettings = {
         remoteDNS: Settings ? Settings.get('remoteDNS') : currentProxySettings?.remoteDNS || 'https://94.140.14.14/dns-query',
-        localDNS: Settings ? Settings.get('localDNS') : currentProxySettings?.localDNS || '8.8.8.8',
+        localDNS: Settings ? Settings.get('localDNS') : currentProxySettings?.localDNS || '1.1.1.1',
         lengthMin: Settings ? Settings.get('fragmentLengthMin') : currentProxySettings?.lengthMin || '100',
         lengthMax: Settings ? Settings.get('fragmentLengthMax') : currentProxySettings?.lengthMax || '200',
         intervalMin: Settings ? Settings.get('fragmentIntervalMin') : currentProxySettings?.intervalMin || '5',
@@ -3121,13 +3121,13 @@ const singboxConfigTemp = {
     dns: {
         servers: [
             {
-                address: "https://8.8.8.8/dns-query",
+                address: "https://1.1.1.1/dns-query",
                 address_resolver: "dns-direct",
                 strategy: "prefer_ipv4",
                 tag: "dns-remote"
             },
             {
-                address: "8.8.8.8",
+                address: "1.1.1.1",
                 address_resolver: "dns-local",
                 strategy: "prefer_ipv4",
                 detour: "direct",
@@ -3166,7 +3166,7 @@ const singboxConfigTemp = {
             tag: "dns-in",
             listen: "127.0.0.1",
             listen_port: 6450,
-            override_address: "8.8.8.8",
+            override_address: "1.1.1.1",
             override_port: 53
         },
         {
